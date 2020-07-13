@@ -1,0 +1,30 @@
+version: '3.7'
+services:
+  db:
+    image: mysql:8.0
+    env_file:
+      - ./.env
+    ports:
+      - 9906:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_DATABASE: ${DB_NAME}
+    networks:
+        - dbnw
+  web:
+    image: python:3
+    build: ./
+    env_file:
+      - ./.env
+    command: python3 manage.py runserver 0.0.0.0:8000
+    ports:
+      - 8000:8000
+    networks:
+      - dbnw
+    depends_on:
+      - db
+    volumes:
+      - .:/usr/src/app
+networks:
+  dbnw:
