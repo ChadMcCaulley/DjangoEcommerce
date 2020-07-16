@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'core',
     'corsheaders',
-    'rest_framework',
+    'rest_auth',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -143,6 +144,7 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
+REST_USE_JWT = True
 
 if DEBUG is False:
     SESSION_COOKIE_SECURE = True
