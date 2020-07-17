@@ -1,4 +1,4 @@
-# DjangoEcommerce
+# django_ecommerce
 
 Django based e-commerce site with the following functionality:
 

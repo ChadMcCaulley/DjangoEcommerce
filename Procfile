@@ -1,1 +1,1 @@
-web: gunicorn rotten_tomatoes.wsgi
+web: gunicorn django_ecommerce.wsgi
