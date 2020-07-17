@@ -160,6 +160,6 @@ if DEBUG is False:
     ALLOWED_HOSTS = ['dj-ecommerce.herokuapp.com']
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     CORS_ORIGIN_WHITELIST = [
-        'https://portfolio-ecom.herokuapp.com/'
+        'https://portfolio-ecom.herokuapp.com'
     ]
     django_heroku.settings(locals())
