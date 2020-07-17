@@ -1,0 +1,1 @@
+web: gunicorn rotten_tomatoes.wsgi
