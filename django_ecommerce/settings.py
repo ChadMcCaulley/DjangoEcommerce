@@ -14,6 +14,7 @@ import os
 import sys
 import django_heroku
 from decouple import config
+from datetime import timedelta
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -47,8 +48,10 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'core',
     'corsheaders',
-    'rest_auth',
-    'rest_framework'
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
+    'rest_framework',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -140,12 +143,20 @@ STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
     )
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=1),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+    'ROTATE_REFRESH_TOKENS': True,
+    'SIGNING_KEY': config('SIGNING_KEY')
 }
 
 SITE_ID = 1
 REST_USE_JWT = True
+JWT_AUTH_COOKIE = 'auth-token'
 
 if DEBUG is False:
     SESSION_COOKIE_SECURE = True
