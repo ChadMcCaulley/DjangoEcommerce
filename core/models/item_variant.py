@@ -5,7 +5,7 @@ from core.mixins import TimeStampMixin
 
 class ItemVariant(TimeStampMixin):
     class Meta:
-        db_table='item_variant'
+        db_table='core_item_variant'
         verbose_name_plural='Item Variants'
     title = models.CharField(max_length=100)    
     price = models.DecimalField(max_digits=15, decimal_places=2)

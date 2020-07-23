@@ -7,7 +7,7 @@ class Review(TimeStampMixin):
     title = models.CharField(max_length=100)
     message = models.TextField()
     rating = models.PositiveIntegerField(
-        validators=[MinValueValidator(1), MaxValueValidator(100)]
+        validators=[MinValueValidator(1), MaxValueValidator(5)]
     )
     item = models.ForeignKey('ItemVariant', on_delete=models.CASCADE)
     user = models.ForeignKey(

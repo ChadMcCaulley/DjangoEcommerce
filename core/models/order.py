@@ -6,12 +6,9 @@ from core.mixins import TimeStampMixin
 class OrderItem (TimeStampMixin):
     """Joining table between orders and items"""
     class Meta:
-        db_table='order_item'
+        db_table='core_order_item'
         verbose_name_plural='Order Items'
     item = models.ForeignKey('Item', on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.title
 
 
 class Order (TimeStampMixin):
