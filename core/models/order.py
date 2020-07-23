@@ -1,8 +1,9 @@
 from django.conf import settings
 from django.db import models
+from core.mixins import TimeStampMixin
 
 
-class OrderItem (models.Model):
+class OrderItem (TimeStampMixin):
     """Joining table between orders and items"""
     class Meta:
         db_table='order_item'
@@ -13,7 +14,7 @@ class OrderItem (models.Model):
         return self.title
 
 
-class Order (models.Model):
+class Order (TimeStampMixin):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE
