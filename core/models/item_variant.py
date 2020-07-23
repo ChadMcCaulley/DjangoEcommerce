@@ -3,9 +3,6 @@ from core.datatypes import NullableDecimal
 from core.mixins import TimeStampMixin
 
 class ItemVariant(TimeStampMixin):
-    id = models.UUIDField(
-        primary_key=True, default=uuid.uuid4, editable=False
-    )
     title = models.CharField(max_length=100)    
     price = models.DecimalField(max_digits=15, decimal_places=2)
     list_price = NullableDecimal(max_digits=15, decimal_places=2)
