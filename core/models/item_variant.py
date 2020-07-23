@@ -1,5 +1,6 @@
+from django.core.validators import MinValueValidator
 from django.db import models
-from core.datatypes import NullableDecimal
+from core.datatypes import NullableDecimal, NullablePositiveInteger
 from core.mixins import TimeStampMixin
 
 class ItemVariant(TimeStampMixin):
@@ -9,7 +10,9 @@ class ItemVariant(TimeStampMixin):
     title = models.CharField(max_length=100)    
     price = models.DecimalField(max_digits=15, decimal_places=2)
     list_price = NullableDecimal(max_digits=15, decimal_places=2)
-    per_item_price = NullableDecimal(max_digits=15, decimal_places=2)
+    num_items_per_order = NullablePositiveInteger(
+        validators=[MinValueValidator(1)]
+    )
     rating = NullableDecimal(
         max_digits=2, decimal_places=1, editable=False
     )
