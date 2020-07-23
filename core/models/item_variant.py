@@ -1,21 +1,15 @@
-import uuid
 from django.db import models
 from core.datatypes import NullableDecimal
 from core.mixins import TimeStampMixin
 
-class Item(TimeStampMixin):
-    """
-    The parent item for a set of item variants.
-    Allows for multiple color options / units for order of an item with
-    separate reviews. Item will display a cummulative rating, but 
-    each variant will show it's rating
-    """
+class ItemVariant(TimeStampMixin):
     id = models.UUIDField(
         primary_key=True, default=uuid.uuid4, editable=False
     )
     title = models.CharField(max_length=100)    
-    max_price = models.DecimalField(max_digits=15, decimal_places=2)
-    min_price = models.DecimalField(max_digits=15, decimal_places=2)
+    price = models.DecimalField(max_digits=15, decimal_places=2)
+    list_price = NullableDecimal(max_digits=15, decimal_places=2)
+    per_item_price = NullableDecimal(max_digits=15, decimal_places=2)
     rating = NullableDecimal(
         max_digits=2, decimal_places=1, editable=False
     )
