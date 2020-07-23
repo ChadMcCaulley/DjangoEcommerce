@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'core',
     'corsheaders',
+    'django_extensions',
     'django_filters',
     'dj_rest_auth',
     'dj_rest_auth.registration',
