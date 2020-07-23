@@ -21,6 +21,7 @@ idna==2.10
 jmespath==0.10.0
 mysqlclient==1.4.6
 oauthlib==3.1.0
+Pillow==7.2.0
 psycopg2==2.8.5
 psycopg2-binary==2.8.4
 PyJWT==1.7.1
