@@ -8,7 +8,8 @@ class OrderSerializer(serializers.HyperlinkedModelSerializer):
             'url',
             'user',
             'items',
-            'start_date',
+            'created_at',
+            'updated_at',
             'ordered_date',
             'ordered',
         ]

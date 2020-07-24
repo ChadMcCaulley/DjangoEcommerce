@@ -13,5 +13,7 @@ class ItemVariantSerializer(serializers.HyperlinkedModelSerializer):
             'list_price',
             'num_items_per_order',
             'rating',
+            'created_at',
+            'updated_at',
             'num_ratings',
         ]

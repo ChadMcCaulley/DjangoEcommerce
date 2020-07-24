@@ -16,5 +16,10 @@ class ItemSerializer(serializers.HyperlinkedModelSerializer):
             'min_price',
             'rating',
             'num_ratings',
+            'created_at',
+            'updated_at',
             'variants'
         ]
+        read_only_fields = (
+            'max_price', 'min_price', 'rating', 'num_ratings',
+        )
