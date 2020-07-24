@@ -15,10 +15,10 @@ class Item(TimeStampMixin):
         primary_key=True, default=uuid.uuid4, editable=False
     )
     title = models.CharField(max_length=100)    
-    max_price = models.DecimalField(
+    max_price = NullableDecimal(
         max_digits=15, decimal_places=2, editable=False
     )
-    min_price = models.DecimalField(
+    min_price = NullableDecimal(
         max_digits=15, decimal_places=2, editable=False
     )
     rating = NullableDecimal(
