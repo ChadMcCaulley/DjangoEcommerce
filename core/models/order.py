@@ -18,7 +18,7 @@ class Order (TimeStampMixin):
         on_delete=models.CASCADE
     )
     items = models.ManyToManyField(
-        'Item', through=OrderItem, related_name='purchase'
+        'Item', through=OrderItem
     )
     ordered_date = models.DateTimeField()
     ordered = models.BooleanField(default=False)
