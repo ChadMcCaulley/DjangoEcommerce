@@ -4,7 +4,7 @@ from core.serializers.item_variant_serializer import \
     ItemVariantSerializer
 
 class ItemSerializer(serializers.HyperlinkedModelSerializer):
-    variants = ItemVariantSerializer(many=True, source='variants')
+    variants = ItemVariantSerializer(many=True)
 
     class Meta:
         model = Item
