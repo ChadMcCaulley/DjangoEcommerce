@@ -1,12 +1,10 @@
 from rest_framework import serializers
 from core.models import ItemVariant
 
-class ItemVariantSerializer(serializers.HyperlinkedModelSerializer):
-    
+class ItemVariantSerializer(serializers.ModelSerializer):
     class Meta:
         model = ItemVariant
         fields = [
-            'url',
             'parent_item',
             'title',
             'price',
