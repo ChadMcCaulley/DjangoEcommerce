@@ -20,7 +20,6 @@ class Order (TimeStampMixin):
     items = models.ManyToManyField(
         'Item', through=OrderItem, related_name='purchase'
     )
-    start_date = models.DateTimeField(auto_now_add=True)
     ordered_date = models.DateTimeField()
     ordered = models.BooleanField(default=False)
 

@@ -3,10 +3,14 @@ from django.db import models
 from core.datatypes import NullableDecimal, NullablePositiveInteger
 from core.mixins import TimeStampMixin
 
+
 class ItemVariant(TimeStampMixin):
     class Meta:
         db_table='core_item_variant'
         verbose_name_plural='Item Variants'
+    parent_item = models.ForeignKey(
+        'Item', on_delete=models.CASCADE, related_name='variants'
+    )
     title = models.CharField(max_length=100)    
     price = models.DecimalField(max_digits=15, decimal_places=2)
     list_price = NullableDecimal(max_digits=15, decimal_places=2)

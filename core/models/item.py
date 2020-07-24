@@ -3,6 +3,7 @@ from django.db import models
 from core.datatypes import NullableDecimal
 from core.mixins import TimeStampMixin
 
+
 class Item(TimeStampMixin):
     """
     The parent item for a set of item variants.

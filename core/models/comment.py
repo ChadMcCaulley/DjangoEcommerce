@@ -4,6 +4,7 @@ from django.db import models
 from core.datatypes import NullableForeignKey
 from core.mixins import TimeStampMixin
 
+
 class Comment(TimeStampMixin):
     title = models.CharField(max_length=100)
     message = models.TextField()
