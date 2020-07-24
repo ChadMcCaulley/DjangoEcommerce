@@ -14,7 +14,7 @@ class ItemVariant(TimeStampMixin):
     title = models.CharField(max_length=100)    
     price = models.DecimalField(max_digits=15, decimal_places=2)
     list_price = NullableDecimal(max_digits=15, decimal_places=2)
-    num_items_per_order = models.PositiveIntegerField(
+    quantity = models.PositiveIntegerField(
         default=1, validators=[MinValueValidator(1)]
     )
     rating = NullableDecimal(
