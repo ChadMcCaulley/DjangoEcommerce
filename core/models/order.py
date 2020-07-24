@@ -8,7 +8,8 @@ class OrderItem (TimeStampMixin):
     class Meta:
         db_table='core_order_item'
         verbose_name_plural='Order Items'
-    item = models.ForeignKey('Item', on_delete=models.CASCADE)
+    item = models.ForeignKey('Item', on_delete=models.PROTECT)
+    order =  models.ForeignKey('Order', on_delete=models.PROTECT)
 
 
 class Order (TimeStampMixin):
@@ -16,7 +17,9 @@ class Order (TimeStampMixin):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE
     )
-    items = models.ManyToManyField(OrderItem)
+    items = models.ManyToManyField(
+        'Item', through=OrderItem, related_name='purchase'
+    )
     start_date = models.DateTimeField(auto_now_add=True)
     ordered_date = models.DateTimeField()
     ordered = models.BooleanField(default=False)
