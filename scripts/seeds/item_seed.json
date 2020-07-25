@@ -1,0 +1,23 @@
+[
+  {
+    "title": "",
+    "company": "",
+    "variants": []
+  },
+  {
+    "title": "",
+    "company": "",
+    "variants": [
+      {
+        "parent_item": "",
+        "title": "",
+        "price": "",
+        "list_price": "",
+        "quantity": "",
+        "inventory": "",
+        "rating": "",
+        "num_ratings": ""
+      }
+    ]
+  }
+]
