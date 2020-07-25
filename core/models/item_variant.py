@@ -1,3 +1,4 @@
+import uuid
 from django.core.validators import MinValueValidator
 from django.db import models
 from core.datatypes import NullableDecimal, NullablePositiveInteger
@@ -8,6 +9,9 @@ class ItemVariant(TimeStampMixin):
     class Meta:
         db_table='core_item_variant'
         verbose_name_plural='Item Variants'
+    id = models.UUIDField(
+        primary_key=True, default=uuid.uuid4, editable=False
+    )
     parent_item = models.ForeignKey(
         'Item', on_delete=models.CASCADE, related_name='variants'
     )
@@ -17,6 +21,7 @@ class ItemVariant(TimeStampMixin):
     quantity = models.PositiveIntegerField(
         default=1, validators=[MinValueValidator(1)]
     )
+    inventory = models.PositiveIntegerField(default=0)
     rating = NullableDecimal(
         max_digits=2, decimal_places=1, editable=False
     )

@@ -2,9 +2,11 @@ from rest_framework import serializers
 from core.models import Item
 from core.serializers.item_variant_serializer import \
     ItemVariantSerializer
+from core.serializers.image_serializer import ImageSerializer
 
 class ItemSerializer(serializers.ModelSerializer):
-    variants = ItemVariantSerializer(many=True)
+    variants = ItemVariantSerializer(many=True, read_only=True)
+    images = ImageSerializer(many=True, read_only=True)
 
     class Meta:
         model = Item
