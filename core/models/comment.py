@@ -17,7 +17,8 @@ class Comment(TimeStampMixin):
     )
 
     def save(self, *args, **kwargs):
-        if self.parent_comment.id == self.id:
+        if self.parent_comment is not None and \
+            self.parent_comment.id == self.id:
             raise ValidationError(
                 'Comments cannot be linked to themselves'
             )
