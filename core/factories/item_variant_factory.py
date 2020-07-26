@@ -7,8 +7,7 @@ class ItemVariantFactory (factory.DjangoModelFactory):
         django_get_or_create = ('title', 'parent_item')
 
     parent_item = factory.SubFactory(ItemFactory)
-    title = factory.Faker(
-        'random_company_product', locale='en_PH.Provider')
+    title = factory.Faker('text', max_nb_chars=100)
     price = factory.Faker('random_int')
     list_price = factory.Faker('random_int')
     quantity = factory.Faker('random_element', elements=(1, 5, 10, 20))
