@@ -29,3 +29,13 @@ class ItemVariant(TimeStampMixin):
 
     def __str__(self):
         return self.title
+
+    @property
+    def rating_breakdown (self):
+        ratings = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
+        result = {}
+        for review in self.review_set.all():
+            ratings[review.rating] += 1
+        for rating in ratings.items():
+            result[rating[0]] = round(rating[1] / self.num_ratings, 4)
+        return result

@@ -9,15 +9,16 @@ class ItemVariantSerializer(serializers.ModelSerializer):
     class Meta:
         model = ItemVariant
         fields = [
-            'parent_item',
-            'title',
-            'price',
-            'list_price',
-            'quantity',
-            'inventory',
-            'rating',
             'created_at',
-            'updated_at',
+            'id',
+            'inventory',
+            'images',
+            'list_price',
             'num_ratings',
-            'images'
+            'parent_item',
+            'price',
+            'quantity',
+            'rating',
+            'title',
+            'updated_at',
         ]
