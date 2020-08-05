@@ -6,7 +6,7 @@ class RatingBreakdownSerializer(serializers.ModelSerializer):
     class Meta:
         model = ItemVariant
         fields = [
-            'id',
             'rating_breakdown',
-            'num_ratings'
+            'num_ratings',
+            'rating'
         ]

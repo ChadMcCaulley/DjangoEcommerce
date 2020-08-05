@@ -23,9 +23,6 @@ class ItemVariantView(viewsets.ModelViewSet):
     
     @action(detail=True, methods=['get'])
     def rating_breakdown (self, request, pk=None):
-        import logging
-        logging.basicConfig(level=logging.DEBUG)
         variant = self.get_object()
         serializer = RatingBreakdownSerializer(variant)
-        logging.debug(serializer.data)
-        return Response({'status': 'password set'})
+        return Response(serializer.data)
