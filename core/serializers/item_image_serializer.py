@@ -6,7 +6,6 @@ class ItemImageSerializer(serializers.ModelSerializer):
         model = ItemImage
         fields = [
             'id',
-            'title',
             'image',
             'item',
             'created_at',
