@@ -1,9 +1,9 @@
 from rest_framework import serializers
-from core.models import Image
+from core.models import ItemImage
 
-class ImageSerializer(serializers.ModelSerializer):
+class ItemImageSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Image
+        model = ItemImage
         fields = [
             'id',
             'title',

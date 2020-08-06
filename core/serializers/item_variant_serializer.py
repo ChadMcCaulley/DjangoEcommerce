@@ -1,10 +1,10 @@
 from rest_framework import serializers
 from core.models import ItemVariant
-from core.serializers.image_serializer import ImageSerializer
+from core.serializers.item_image_serializer import ItemImageSerializer
 
 
 class ItemVariantSerializer(serializers.ModelSerializer):
-    images = ImageSerializer(many=True, read_only=True)
+    images = ItemImageSerializer(many=True, read_only=True)
 
     class Meta:
         model = ItemVariant

@@ -1,4 +1,4 @@
-from core.serializers.image_serializer import ImageSerializer
+from core.serializers.item_image_serializer import ItemImageSerializer
 from core.serializers.item_serializer import ItemSerializer
 from core.serializers.item_variant_serializer import \
     ItemVariantSerializer
