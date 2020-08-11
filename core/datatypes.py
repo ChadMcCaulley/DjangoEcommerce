@@ -66,3 +66,13 @@ class NullableURL(models.URLField):
         kwargs['blank'] = True
         kwargs['null'] = True
         super().__init__(*args, **kwargs)
+
+# A Nullable DateTimeField
+class NullableDateTime(models.DateTimeField):
+    description = "A nullable DateTimeField"
+
+    def __init__(self, *args, **kwargs):
+        kwargs['default'] = None
+        kwargs['blank'] = True
+        kwargs['null'] = True
+        super().__init__(*args, **kwargs)
