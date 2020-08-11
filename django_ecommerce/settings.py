@@ -151,9 +151,17 @@ SIMPLE_JWT = {
     'SIGNING_KEY': config('SIGNING_KEY')
 }
 
-
+AUTH_USER_MODEL = 'core.User'
 SITE_ID = 1
 REST_USE_JWT = True
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+OLD_PASSWORD_FIELD_ENABLED = True
+REST_AUTH_SERIALIZERS = {
+    'REGISTER_SERIALIZER': 'core.serializers.RegistrationSerializer'
+}
 
 if DEBUG is False:
     # aws settings
