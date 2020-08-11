@@ -4,23 +4,24 @@ from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
-from core.models import ItemVariant
+from core.models import ProductLine
 from core.serializers import (
-    ItemVariantSerializer, RatingBreakdownSerializer
+    ProductLineSerializer, RatingBreakdownSerializer
 )
 
-class ItemVariantFilterSet(FilterSet):
+
+class ProductLineFilterSet(FilterSet):
     class Meta:
-        model = ItemVariant
+        model = ProductLine
         fields = {}
 
 
-class ItemVariantView(viewsets.ModelViewSet):
-    queryset = ItemVariant.objects.all()
-    serializer_class = ItemVariantSerializer
+class ProductLineView(viewsets.ModelViewSet):
+    queryset = ProductLine.objects.all()
+    serializer_class = ProductLineSerializer
     filter_backends = [DjangoFilterBackend]
-    filter_class = ItemVariantFilterSet
-    
+    filter_class = ProductLineFilterSet
+
     @action(detail=True, methods=['get'])
     def rating_breakdown (self, request, pk=None):
         variant = self.get_object()

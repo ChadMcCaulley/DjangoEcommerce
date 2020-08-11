@@ -1,15 +1,16 @@
 from rest_framework import serializers
-from core.models import ItemVariant
-from core.serializers.item_image_serializer import ItemImageSerializer
+from core.models import Product
+from core.serializers.product_image import ProductImageSerializer
 
 
-class ItemVariantSerializer(serializers.ModelSerializer):
-    images = ItemImageSerializer(many=True, read_only=True)
+class ProductSerializer(serializers.ModelSerializer):
+    images = ProductImageSerializer(many=True, read_only=True)
 
     class Meta:
-        model = ItemVariant
+        model = Product
         fields = [
             'created_at',
+            'description',
             'id',
             'inventory',
             'images',
