@@ -15,17 +15,3 @@ class TimeStampMixin(models.Model):
 
     class Meta:
         abstract = True
-
-
-class AddressMixin (models.Model):
-    """
-    Adds address fields to model
-    """
-    address = models.CharField(max_length=280)
-    country = models.ForeignKey('Country', on_delete=models.CASCADE)
-    state = models.ForeignKey('State', on_delete=models.CASCADE)
-    city = models.ForeignKey('City', on_delete=models.CASCADE)
-    zip_code = models.CharField(max_length=10)
-
-    class Meta:
-        abstract = True
