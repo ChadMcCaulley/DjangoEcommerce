@@ -1,15 +1,9 @@
+import uuid
 from django.conf import settings
 from django.db import models
 from core.mixins import TimeStampMixin
-
-
-class OrderItem (TimeStampMixin):
-    """Joining table between orders and items"""
-    class Meta:
-        db_table='core_order_item'
-        verbose_name_plural='Order Items'
-    item = models.ForeignKey('Item', on_delete=models.PROTECT)
-    order =  models.ForeignKey('Order', on_delete=models.PROTECT)
+from core.datatypes import NullableDateTime
+from core.models.order_product import OrderProduct
 
 
 class Order (TimeStampMixin):
@@ -17,12 +11,25 @@ class Order (TimeStampMixin):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE
     )
-    items = models.ManyToManyField(
-        'Item', through=OrderItem
+    products = models.ManyToManyField('Product', through=OrderProduct)
+    ref_code = models.UUIDField(default=uuid.uuid4)
+    ordered_date = NullableDateTime()
+    shipping_address = models.ForeignKey(
+        'UserAddress',
+        on_delete=models.PROTECT,
+        related_name="shipping_address"
     )
-    ordered_date = models.DateTimeField()
-    ordered = models.BooleanField(default=False)
+    billing_address = models.ForeignKey(
+        'UserAddress',
+        on_delete=models.PROTECT,
+        related_name="billing_address"
+    )
+    payment = models.DecimalField(max_digits=12, decimal_places=2)
+    being_delivered = models.BooleanField(default=False)
+    received = models.BooleanField(default=False)
+    refund_requested = models.BooleanField(default=False)
+    refund_granted = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.user.username
+        return f'{self.user.id}_{self.ref_code}'
 
