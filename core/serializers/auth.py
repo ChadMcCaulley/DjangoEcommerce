@@ -16,7 +16,7 @@ class RegistrationSerializer (serializers.ModelSerializer):
         ]
         write_only_fields =['password', 'password2']
 
-    def save(self):
+    def save(self, request):
         user = User(
             email=self.validated_data['email'],
             first_name=self.validated_data['first_name'],
