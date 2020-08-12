@@ -1,6 +1,6 @@
 import factory
-from core.factories.user_factory import UserFactory
-from core.factories.review_factory import ReviewFactory
+from core.factories.user import UserFactory
+from core.factories.review import ReviewFactory
 
 
 class CommentFactory (factory.DjangoModelFactory):
