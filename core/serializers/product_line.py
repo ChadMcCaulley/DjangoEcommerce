@@ -1,20 +1,20 @@
 from rest_framework import serializers
 from core.models import ProductLine
-from core.serializers.product import ProductSerializer
+from core.serializers.product_line_image import \
+    ProductLineImageSerializer
 
 class ProductLineSerializer(serializers.ModelSerializer):
-    products = ProductSerializer(many=True, read_only=True)
+    images = ProductLineImageSerializer(many=True, read_only=True)
 
     class Meta:
         model = ProductLine
         fields = [
-            'created_at',
+            'category',
             'description',
             'id',
+            'images',
             'title',
-            'products',
-            'updated_at',
         ]
         read_only_fields = (
-            'rating', 'num_ratings',
+            'rating', 'num_ratings', 'updated_at', 'created_at'
         )
