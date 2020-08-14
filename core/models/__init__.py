@@ -9,8 +9,6 @@ from core.models.order import Order
 from core.models.order_product import OrderProduct
 from core.models.product import Product
 from core.models.product_image import ProductImage
-from core.models.product_line import ProductLine 
-from core.models.product_line_image import ProductLineImage
 from core.models.question import Question
 from core.models.review import Review
 from core.models.state import State

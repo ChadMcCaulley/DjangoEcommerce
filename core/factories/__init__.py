@@ -4,7 +4,6 @@ from core.factories.comment import CommentFactory
 from core.factories.company import CompanyFactory
 from core.factories.country import CountryFactory
 from core.factories.locality import LocalityFactory
-from core.factories.product_line import ProductLineFactory
 from core.factories.product import ProductFactory
 from core.factories.review import ReviewFactory
 from core.factories.state import StateFactory

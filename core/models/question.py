@@ -7,8 +7,8 @@ class Question (TimeStampMixin):
     title = models.CharField(max_length=100)
     message = models.TextField()
     num_useful = models.PositiveIntegerField(default=0)
-    product_line = models.ForeignKey(
-        'ProductLine', on_delete=models.CASCADE
+    product = models.ForeignKey(
+        'Product', on_delete=models.CASCADE
     )
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,

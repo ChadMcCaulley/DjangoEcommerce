@@ -2,9 +2,8 @@ from django.db import models
 from core.mixins import TimeStampMixin
 
 def get_upload_path(instance, filename):
-    parent = instance.product.product_line
-    title = instance.product.title
-    return f'images/{parent.title}_{parent.id}/{title}/{filename}'
+    product = instance.product
+    return f'images/{product.title}_{product.id}/{filename}'
 
 
 class ProductImage(TimeStampMixin):
