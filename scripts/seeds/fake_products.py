@@ -1,6 +1,6 @@
 import random
 from core.factories import (
-    ProductFactory, ProductLineFactory, ReviewFactory, CommentFactory,
+    ProductFactory, ReviewFactory, CommentFactory,
     UserFactory, CompanyFactory, CategoryFactory
 )
 
@@ -24,8 +24,8 @@ def seed_comments (reviews):
             random.randint(0, 3), review=review, user=comUser
         )
 
-def seed_reviews (product_lines):
-    for line in product_lines:
+def seed_reviews (products):
+    for product in products:
         reviewUser = None
         if random.random() > 0.1:
             reviewUser = users[random.randint(0, len(users) - 1)]
@@ -33,31 +33,23 @@ def seed_reviews (product_lines):
             reviewUser = UserFactory()
             users.append(reviewUser)
         reviews = ReviewFactory.create_batch(
-            random.randint(0, 10), product=line, user=reviewUser
+            random.randint(0, 10), product=product, user=reviewUser
         )
         seed_comments(reviews)
 
-def seed_products (product_lines):
-    for line in product_lines:
-        products = ProductFactory.create_batch(
-            random.randint(0, 5), product_line=line
-        )
-
-def seed_product_lines (companies):
+def seed_products (companies):
     for company in companies:
-        category = categories[random.randint(0, len(categories) - 1)]
-        product_lines = ProductLineFactory.create_batch(
-            random.randint(0, 5), company=company, category=category
+        products = ProductFactory.create_batch(
+            random.randint(0, 5), company=company
         )
-        seed_products(product_lines)
-        seed_reviews(product_lines)
+        seed_reviews(products)
 
 def seed_companies (owners):
     for owner in owners:
         companies = CompanyFactory.create_batch(
             random.randint(0, 2), owner=owner
         )
-        seed_product_lines(companies)
+        seed_products(companies)
 
 
 seed_companies(owners)
