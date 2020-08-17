@@ -1,0 +1,102 @@
+{
+  "categories": [
+    "Electronics",
+    "Clothing",
+    "Footware",
+    "Luggage",
+    "Bicycle"
+  ],
+  "companies": [
+    {
+      "name": "HyperX",
+      "products": [
+        {
+          "title": "Cloud Headphones",
+          "description": "The versatile Cloud headset family is designed to fit anyone’s gaming needs, no matter their system, play style or personal style. Whether you need virtual 7.1 surround sound for your PC domination station or stereo cans crafted for console life, there’s a Cloud made for you. Each Cloud model is designed to keep you on top of your game longer by providing award-winning comfort through its signature HyperX™ memory foam. 53mm drivers and closed ear cups team up to deliver total audio immersion and pump out precision sound. Built with a durable aluminum frame, every headset in the Cloud line is engineered to tank daily damage and keep coming back for more. Cloud’s detachable noise-cancelling mic transmits loud and clear, so your teamwork will always be on point.",
+          "category": "Electronics",
+          "price": 49.99,
+          "list_price": 59.99,
+          "inventory": 15,
+          "images": [
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+            "https://images.unsplash.com/photo-1505751104546-4b63c93054b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+            "https://images.unsplash.com/photo-1505751171710-1f6d0ace5a85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Apple",
+      "products": [
+        {
+          "title": "Smatch Watch",
+          "category": "Electronics",
+          "price": 74.99,
+          "inventory": 70,
+          "images": [
+            "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=989&q=80",
+            "https://images.unsplash.com/photo-1522273500616-6b4757e4c184?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+          ]
+        },
+        {
+          "title": "Apple Airpods (2 pack)",
+          "category": "Electronics",
+          "price": 99.99,
+          "list_price": 199.99,
+          "inventory": 70,
+          "quantity": 2,
+          "images": [
+            "https://images.unsplash.com/photo-1504274066651-8d31a536b11a?ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80",
+            "https://images.unsplash.com/flagged/photo-1585667302888-4ecfebf2d680?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+            "https://images.unsplash.com/photo-1592335509190-ac997442fbef?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Converse",
+      "products": [
+        {
+          "title": "Converse Red Shoes",
+          "category": "Footware",
+          "price": 34.99,
+          "list_price": 45.99,
+          "inventory": 150,
+          "images": [
+            "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=643&q=80"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vinta",
+      "products": [
+        {
+          "title": "Vinta Canvas Bag",
+          "category": "Luggage",
+          "price": 19.99,
+          "list_price": 109.99,
+          "inventory": 0,
+          "images": [
+            "https://images.unsplash.com/photo-1491637639811-60e2756cc1c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=669&q=80"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Giant",
+      "products": [
+        {
+          "title": "Giant Black Racing Bike",
+          "category": "Bicycle",
+          "price": 499.99,
+          "inventory": 3,
+          "images": [
+            "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1008&q=80",
+            "https://images.unsplash.com/photo-1497515098781-e965764ab601?ixlib=rb-1.2.1&auto=format&fit=crop&w=1008&q=80"
+          ]
+        }
+      ]
+    }
+  ]
+}
