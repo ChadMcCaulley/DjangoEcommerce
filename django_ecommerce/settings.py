@@ -185,7 +185,7 @@ if DEBUG is False:
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
     DEFAULT_FILE_STORAGE = 'core.storage_backends.PublicMediaStorage'
 
-    ALLOWED_HOSTS = ['dj-ecommerce.herokuapp.com']
+    ALLOWED_HOSTS = ['dj-ecommerce.netlify.app']
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     CORS_ORIGIN_WHITELIST = [
         'https://portfolio-ecom.herokuapp.com'
