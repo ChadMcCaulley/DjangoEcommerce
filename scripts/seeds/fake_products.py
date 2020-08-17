@@ -1,13 +1,15 @@
 import random
 from core.factories import (
     ProductFactory, ReviewFactory, CommentFactory,
-    UserFactory, CompanyFactory, CategoryFactory
+    UserFactory, CompanyFactory
+)
+from scripts.seeds.seed_categories import seed_categories
+
+seed_categories(
+    ["Electronics", "Clothing", "Footware", "Luggage", "Bicycle"]
 )
 
-category_names = ['Video Games', 'Clothing', 'Movies & TV']
-categories = []
-for name in category_names:
-    categories.append(CategoryFactory(name=name))
+
 owners = UserFactory.create_batch(10)
 users = [u for u in owners]
 

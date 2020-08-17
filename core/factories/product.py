@@ -5,9 +5,7 @@ from core.factories.company import CompanyFactory
 class ProductFactory (factory.DjangoModelFactory):
     class Meta:
         model = 'core.Product'
-        django_get_or_create = (
-            'title', 'price', 'quantity', 'category', 'company'
-        )
+        django_get_or_create = ('title', 'company')
 
     title = factory.Faker('text', max_nb_chars=100)
     description = factory.Faker('text', max_nb_chars=500)
