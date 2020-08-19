@@ -21,4 +21,5 @@ class ProductSerializer(serializers.ModelSerializer):
             'quantity',
             'rating',
             'title',
+            'in_stock'
         ]
