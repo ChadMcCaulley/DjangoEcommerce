@@ -6,7 +6,8 @@ from rest_framework.response import Response
 
 from core.models import Product
 from core.serializers import (
-    ProductSerializer, RatingBreakdownSerializer
+    ProductSerializer, ProductDetailSerializer,
+    RatingBreakdownSerializer
 )
 
 class ProductFilterSet(FilterSet):
@@ -26,3 +27,8 @@ class ProductView(viewsets.ModelViewSet):
         variant = self.get_object()
         serializer = RatingBreakdownSerializer(variant)
         return Response(serializer.data)
+
+    def get_serializer_class(self):
+        if self.action == 'retrieve':
+            return ProductDetailSerializer
+        return ProductSerializer
