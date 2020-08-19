@@ -5,6 +5,8 @@ from core.mixins import TimeStampMixin
 
 
 class Review(TimeStampMixin):
+    class Meta:
+        unique_together = ('product', 'user')
     title = models.CharField(max_length=100)
     message = models.TextField()
     rating = models.PositiveIntegerField(
