@@ -24,29 +24,28 @@ def seed_images (images, file_name, product):
         image = get_image_from_url(url, f"{file_name}_{index}")
         ProductImage.objects.get_or_create(product=product, image=image)
 
-def seed_comments (reviews):
-    for review in reviews:
-        comUser = None
+def seed_comments (review):
+    poss_users = users.copy()
+    for i in range(randint(0, 5)):
+        comm_user = None
         if random() > 0.1:
-            comUser = users[randint(0, len(users) - 1)]
+            comm_user = poss_users[randint(0, len(poss_users) - 1)]
         else:
-            comUser = UserFactory()
-        users.append(comUser)
-        comments = CommentFactory.create_batch(
-            randint(0, 5), review=review, user=comUser
-        )
+            comm_user = UserFactory()
+            users.append(comm_user)
+        CommentFactory(review=review, user=comm_user)
 
 def seed_reviews (product):
-    reviewUser = None
-    if random() > 0.1:
-        reviewUser = users[randint(0, len(users) - 1)]
-    else:
-        reviewUser = UserFactory()
-        users.append(reviewUser)
-    reviews = ReviewFactory.create_batch(
-        randint(0, 30), product=product, user=reviewUser
-    )
-    seed_comments(reviews)
+    poss_users = users.copy()
+    for i in range(randint(0, 30)):
+        review_user = None
+        if random() > 0.1:
+            review_user = poss_users[randint(0, len(poss_users) - 1)]
+        else:
+            review_user = UserFactory()
+            users.append(review_user)
+        review = ReviewFactory(product=product, user=review_user)
+        seed_comments(review)
 
 def seed_products (products, company):
     for prod in products:
