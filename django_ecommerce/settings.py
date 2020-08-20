@@ -189,7 +189,7 @@ if DEBUG is False:
     ALLOWED_HOSTS = ['dj-ecommerce.netlify.app']
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     CORS_ORIGIN_WHITELIST = [
-        'https://dj-ecommerce.netlify.app/'
+        'https://dj-ecommerce.netlify.app'
     ]
     django_heroku.settings(locals())
 else:
