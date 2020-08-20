@@ -13,31 +13,28 @@ seed_categories(
 owners = UserFactory.create_batch(10)
 users = [u for u in owners]
 
-def seed_comments (reviews):
-    for review in reviews:
-        comUser = None
-        if random.random() > 0.1:
-            comUser = users[
-                random.randint(0, len(users) - 1)]
+def seed_comments (review):
+    poss_users = users.copy()
+    for i in range(randint(0, 5)):
+        comm_user = None
+        if random() > 0.1:
+            comm_user = poss_users[randint(0, len(poss_users) - 1)]
         else:
-            comUser = UserFactory()
-        users.append(comUser)
-        comments = CommentFactory.create_batch(
-            random.randint(0, 3), review=review, user=comUser
-        )
+            comm_user = UserFactory()
+            users.append(comm_user)
+        CommentFactory(review=review, user=comm_user)
 
-def seed_reviews (products):
-    for product in products:
-        reviewUser = None
-        if random.random() > 0.1:
-            reviewUser = users[random.randint(0, len(users) - 1)]
+def seed_reviews (product):
+    poss_users = users.copy()
+    for i in range(randint(0, 30)):
+        review_user = None
+        if random() > 0.1:
+            review_user = poss_users[randint(0, len(poss_users) - 1)]
         else:
-            reviewUser = UserFactory()
-            users.append(reviewUser)
-        reviews = ReviewFactory.create_batch(
-            random.randint(0, 10), product=product, user=reviewUser
-        )
-        seed_comments(reviews)
+            review_user = UserFactory()
+            users.append(review_user)
+        review = ReviewFactory(product=product, user=review_user)
+        seed_comments(review)
 
 def seed_products (companies):
     for company in companies:

@@ -40,3 +40,7 @@ class Product(TimeStampMixin):
         for rating in ratings.items():
             result[rating[0]] = round(rating[1] / self.num_reviews, 4)
         return result
+
+    @property
+    def in_stock (self):
+        return self.inventory > 0

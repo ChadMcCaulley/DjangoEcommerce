@@ -13,3 +13,11 @@ class UserSerializer(serializers.ModelSerializer):
             'is_active',
             'is_staff'
         ]
+
+
+class OtherUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = [
+            'first_name',
+        ]
