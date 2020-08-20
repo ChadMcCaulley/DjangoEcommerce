@@ -14,11 +14,10 @@ owners = UserFactory.create_batch(10)
 users = [u for u in owners]
 
 def seed_comments (review):
-    poss_users = users.copy()
     for i in range(randint(0, 5)):
         comm_user = None
         if random() > 0.1:
-            comm_user = poss_users[randint(0, len(poss_users) - 1)]
+            comm_user = users[randint(0, len(users) - 1)]
         else:
             comm_user = UserFactory()
             users.append(comm_user)
@@ -28,8 +27,10 @@ def seed_reviews (product):
     poss_users = users.copy()
     for i in range(randint(0, 30)):
         review_user = None
-        if random() > 0.1:
-            review_user = poss_users[randint(0, len(poss_users) - 1)]
+        if random() > 0.1 and len(poss_users) > 0:
+            index = randint(0, len(poss_users) - 1)
+            review_user = poss_users[index]
+            del poss_users[index]
         else:
             review_user = UserFactory()
             users.append(review_user)
