@@ -9,7 +9,8 @@ class ReviewFilterSet(FilterSet):
     class Meta:
         model = Review
         fields = {
-            'product_id': ['exact']
+            'product__id': ['exact'],
+            'rating': ['exact', 'gt', 'lt']
         }
 
 
