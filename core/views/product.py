@@ -13,7 +13,9 @@ from core.serializers import (
 class ProductFilterSet(FilterSet):
     class Meta:
         model = Product
-        fields = {}
+        fields = {
+            'id': ['exact', 'in']
+        }
 
 
 class ProductView(viewsets.ModelViewSet):
