@@ -12,6 +12,7 @@ class OrderSerializer(serializers.ModelSerializer):
             'user',
             'products',
             'ref_code',
+            'ordered',
             'ordered_date',
             'shipping_address',
             'billing_address',

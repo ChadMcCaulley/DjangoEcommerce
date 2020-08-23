@@ -9,7 +9,9 @@ from core.serializers import OrderSerializer
 class OrderFilterSet(FilterSet):
     class Meta:
         model = Order
-        fields = {}
+        fields = {
+            'ordered': ['exact']
+        }
 
 
 class OrderView(viewsets.ModelViewSet):

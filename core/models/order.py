@@ -14,6 +14,7 @@ class Order (TimeStampMixin):
     products = models.ManyToManyField('Product', through=OrderProduct)
     ref_code = models.UUIDField(default=uuid.uuid4)
     ordered_date = NullableDateTime()
+    ordered = models.BooleanField(default=False)
     shipping_address = models.ForeignKey(
         'UserAddress',
         on_delete=models.PROTECT,

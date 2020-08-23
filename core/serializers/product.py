@@ -16,7 +16,9 @@ class ProductSerializer(serializers.ModelSerializer):
             'price',
             'quantity',
             'rating',
-            'title'
+            'title',
+            'inventory',
+            'in_stock'
         ]
 
 
