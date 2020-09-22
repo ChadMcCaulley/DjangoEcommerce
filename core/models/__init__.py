@@ -12,5 +12,4 @@ from core.models.product_image import ProductImage
 from core.models.question import Question
 from core.models.review import Review
 from core.models.state import State
-from core.models.user import User
 from core.models.user_address import UserAddress

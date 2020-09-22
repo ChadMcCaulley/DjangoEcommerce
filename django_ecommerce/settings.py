@@ -138,6 +138,9 @@ USE_L10N = True
 USE_TZ = True
 
 REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
     ),
@@ -152,22 +155,14 @@ SIMPLE_JWT = {
     'SIGNING_KEY': config('SIGNING_KEY')
 }
 
-AUTH_USER_MODEL = 'core.User'
 SITE_ID = 1
 REST_USE_JWT = True
-ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
 OLD_PASSWORD_FIELD_ENABLED = True
-
-REST_AUTH_SERIALIZERS = {
-    'USER_DETAILS_SERIALIZER': 'core.serializers.UserSerializer'
-}
-REST_AUTH_REGISTER_SERIALIZERS = {
-    'REGISTER_SERIALIZER': 'core.serializers.RegistrationSerializer'
-}
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 if DEBUG is False:
     # aws settings
@@ -187,7 +182,6 @@ if DEBUG is False:
     DEFAULT_FILE_STORAGE = 'core.storage_backends.PublicMediaStorage'
 
     ALLOWED_HOSTS = ['dj-ecommerce.netlify.app']
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     CORS_ORIGIN_WHITELIST = [
         'https://dj-ecommerce.netlify.app'
     ]
