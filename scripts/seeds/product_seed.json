@@ -31,6 +31,7 @@
           "title": "Apple Smatch Watch",
           "category": "Electronics",
           "price": 74.99,
+          "list_price": 99.99,
           "inventory": 70,
           "images": [
             "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=989&q=80",
@@ -55,7 +56,7 @@
           "title": "Apple Magic Mouse",
           "category": "Electronics",
           "price": 89.99,
-          "list_price": 99.99,
+          "list_price": null,
           "inventory": 17,
           "quantity": 1,
           "images": [
@@ -71,8 +72,8 @@
         {
           "title": "Converse Red Shoes",
           "category": "Footware",
-          "price": 34.99,
-          "list_price": 45.99,
+          "price": 54.99,
+          "list_price": null,
           "inventory": 150,
           "images": [
             "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=643&q=80"
@@ -103,6 +104,7 @@
           "title": "Giant Black Racing Bike",
           "category": "Bicycle",
           "price": 499.99,
+          "list_price": 599.99,
           "inventory": 3,
           "images": [
             "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1008&q=80",
@@ -118,6 +120,7 @@
           "title": "Sony 7s DSLR Camera",
           "category": "Electronics",
           "price": 399.99,
+          "list_price": 699.99,
           "inventory": 49,
           "images": [
             "https://images.unsplash.com/photo-1543238825-261809be9621?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1435&q=80",
@@ -133,6 +136,7 @@
           "title": "Oculus Go",
           "category": "Electronics",
           "price": 299.99,
+          "list_price": null,
           "inventory": 1998,
           "images": [
             "https://images.unsplash.com/photo-1525459819821-1c2d33189e23?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80",
@@ -150,6 +154,7 @@
           "title": "Lenovo ThinkPad 2020",
           "category": "Electronics",
           "price": 799.99,
+          "list_price": 999.99,
           "inventory": 27000,
           "images": [
             "https://images.unsplash.com/photo-1578598336057-368c764c0596?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
@@ -165,6 +170,7 @@
           "title": "GoPro Hero8",
           "category": "Electronics",
           "price": 199.99,
+          "list_price": null,
           "inventory": 40000,
           "images": [
             "https://images.unsplash.com/photo-1532877590696-69a157b92b78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
@@ -191,8 +197,8 @@
           "title": "Nike Revolt",
           "category": "Footware",
           "price": 89.99,
-          "list_price": 49.99,
-          "inventory": 3,
+          "list_price": 149.99,
+          "inventory": 0,
           "images": [
             "https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
           ]
