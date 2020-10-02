@@ -1,3 +1,4 @@
+from core.serializers.company import CompanySerializer
 from core.serializers.order import OrderSerializer
 from core.serializers.order_product import OrderProductSerializer
 from core.serializers.product import \
