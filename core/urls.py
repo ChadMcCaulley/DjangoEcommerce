@@ -14,7 +14,7 @@ router = routers.DefaultRouter()
 router.register(r'product_images', ProductImageView)
 router.register(r'products', ProductView)
 router.register(r'orders', OrderView)
-router.register(r'order_products', OrderView)
+router.register(r'order_products', OrderProductView)
 router.register(r'reviews', ReviewView)
 
 urlpatterns = router.urls

@@ -1,5 +1,5 @@
+from django.core.exceptions import ObjectDoesNotExist
 from django_filters import FilterSet
-from rest_framework.permissions import IsAuthenticated
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
 from rest_framework.decorators import action
@@ -25,7 +25,11 @@ class OrderView(viewsets.ModelViewSet):
 
     @action(detail=False, methods=['get'])
     def latest(self, request, pk=None):
-        user = request.user.id
-        order = Order.objects.get(user=user, ordered=False)
+        order = None
+        user = request.user
+        try:
+            order = Order.objects.get(user=user.id, ordered=False)
+        except ObjectDoesNotExist:
+            order = Order.objects.create(user=user)
         serializer = OrderSerializer(order)
         return Response(serializer.data)
