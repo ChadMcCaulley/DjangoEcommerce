@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from core.models import Product
 from core.serializers.product_image import ProductImageSerializer
+from core.serializers.company import CompanySerializer
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -24,6 +25,7 @@ class ProductSerializer(serializers.ModelSerializer):
 
 class ProductDetailSerializer(serializers.ModelSerializer):
     images = ProductImageSerializer(many=True, read_only=True)
+    company = CompanySerializer(read_only=True)
 
     class Meta:
         model = Product
