@@ -8,3 +8,7 @@ Django based e-commerce site with the following functionality:
 * Item reviews
 * Item based Q&A sections
 * Social authentication (Twitter, Facebook)
+
+Check out the site: https://dj-ecommerce.netlify.app/
+
+The api can be found at: https://portfolio-ecom.herokuapp.com/
