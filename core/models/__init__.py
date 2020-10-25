@@ -7,6 +7,7 @@ from core.models.country import Country
 from core.models.locality import Locality
 from core.models.order import Order
 from core.models.order_product import OrderProduct
+from core.models.payment import Payment
 from core.models.product import Product
 from core.models.product_image import ProductImage
 from core.models.question import Question

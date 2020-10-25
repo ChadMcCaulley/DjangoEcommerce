@@ -9,9 +9,9 @@ from core.models.order_product import OrderProduct
 
 
 class Order (TimeStampMixin):
-    user = models.ForeignKey(
+    user = NullableForeignKey(
         settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE
+        on_delete=models.SET_NULL
     )
     products = models.ManyToManyField('Product', through=OrderProduct)
     ref_code = models.UUIDField(default=uuid.uuid4)
@@ -27,7 +27,11 @@ class Order (TimeStampMixin):
         on_delete=models.PROTECT,
         related_name="billing_address"
     )
-    payment = NullableDecimal(max_digits=12, decimal_places=2)
+    payment = NullableForeignKey(
+        'Payment',
+        on_delete=models.PROTECT,
+        related_name="payment"
+    )
     being_delivered = models.BooleanField(default=False)
     received = models.BooleanField(default=False)
     refund_requested = models.BooleanField(default=False)
